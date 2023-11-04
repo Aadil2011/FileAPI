@@ -1,6 +1,7 @@
 #include "FileAPI.h"
+#include "pch.h"
 
-bool _declspec(dllexport) readFile(FILE f)
+bool __declspec(dllexport) readFile(DOC f)
 {
 	HANDLE file = CreateFile((LPCWSTR)f.path, f.flag, f.shareMode, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 
@@ -32,7 +33,7 @@ bool _declspec(dllexport) readFile(FILE f)
 	}
 }
 
-bool _declspec(dllexport) writeFile(FILE f)
+bool __declspec(dllexport) writeFile(DOC f)
 {
 	HANDLE file = CreateFile((LPCWSTR)f.path, f.flag, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 

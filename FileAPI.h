@@ -11,7 +11,7 @@
 #define WRITE GENERIC_WRITE
 
 
-struct FILE {
+struct DOC {
 	const char* path;
 	std::vector<unsigned char> &data;
 	void* buffer;
@@ -19,5 +19,5 @@ struct FILE {
 	int flag;
 	int shareMode;
 };
-bool _declspec(dllexport) readFile(FILE f);
-bool _declspec(dllexport) writeFile(FILE f);
+bool __declspec(dllexport) readFile(DOC f);
+bool __declspec(dllexport) writeFile(DOC f);
